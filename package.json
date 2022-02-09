@@ -1,0 +1,25 @@
+{
+  "name": "juejin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhouIyu/juejin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhouIyu/juejin/issues"
+  },
+  "homepage": "https://github.com/zhouIyu/juejin#readme",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "node-schedule": "^2.1.0",
+    "nodemailer": "^6.7.2"
+  }
+}
