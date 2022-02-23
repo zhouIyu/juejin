@@ -75,7 +75,7 @@ const signIn = async () => {
 }
 
 const start = () => {
-  schedule.scheduleJob('00 00 10 * * *', async () => {
+  schedule.scheduleJob('00 00 08 * * *', async () => {
     await signIn()
   })
 }
