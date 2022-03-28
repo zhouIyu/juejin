@@ -9,25 +9,25 @@ axios.defaults.headers.Cookie = info.cookie
 
 // 签到
 const checkIn = async () => {
-  let {data} = await axios.post(api.checkInApi)
+  let { data } = await axios.post(api.checkInApi)
   return data
 }
 
 // 抽奖
 const draw = async () => {
-  let {data} = await axios.post(api.drawApi)
+  let { data } = await axios.post(api.drawApi)
   return data
 }
 
 // 沾福
 const lucky = async () => {
-  let {data: luckyData} = await axios.post(api.luckyListApi, {
+  let { data: luckyData } = await axios.post(api.luckyListApi, {
     page_no: 1,
     page_size: 5
   })
   console.log(luckyData)
   const id = luckyData.data.lotteries[0].history_id
-  let {data} = await axios.post(api.luckyApi, {
+  let { data } = await axios.post(api.luckyApi, {
     lottery_history_id: id
   })
   console.log(data)
@@ -35,9 +35,9 @@ const lucky = async () => {
 }
 
 const sendEmail = (subject, html) => {
-  const {user, from, to, pass} = info
-  const transporter = nodeMailer.createTransport({service: 'qq', auth: {user, pass}})
-  transporter.sendMail({from, to, subject, html}, (err) => {
+  const { user, from, to, pass } = info
+  const transporter = nodeMailer.createTransport({ service: 'qq', auth: { user, pass } })
+  transporter.sendMail({ from, to, subject, html }, (err) => {
     if (err) {
       return console.log(`邮件发送失败，${err}`)
     }
@@ -82,5 +82,7 @@ const start = () => {
 
 start()
 
+
+module.exports = { signIn }
 
 
