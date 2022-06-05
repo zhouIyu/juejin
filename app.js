@@ -54,7 +54,7 @@ const signIn = async () => {
     content = `掘金签到成功！今日获得${checkInData.data.incr_point}积分，当前总积分：${checkInData.data.sum_point}。`
     const drawData = await draw()
     console.log('💰', drawData)
-    if (drawData) {
+    if (drawData.data) {
       subject += ',抽奖成功'
       content += `掘金免费抽奖成功, 获得：${drawData.data.lottery_name}`
     } else {
@@ -63,7 +63,7 @@ const signIn = async () => {
     }
     const luckyData = await lucky()
     console.log('❤', luckyData)
-    if (luckyData) {
+    if (luckyData.data) {
       content += `沾福成功，获得：${luckyData.data.dip_value}`
     }
   } else {
