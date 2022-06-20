@@ -64,14 +64,16 @@ const signIn = async () => {
     const luckyData = await lucky()
     console.log('❤', luckyData)
     if (luckyData.data) {
-      content += `沾福成功，获得：${luckyData.data.dip_value}`
+      content += `,沾福成功，获得：${luckyData.data.dip_value}`
     }
+    console.log(subject)
+    console.log(content)
+    console.log('-----------------------')
   } else {
     subject = checkInData.err_msg
     content = checkInData.err_msg
+    sendEmail(subject, content)
   }
-
-  sendEmail(subject, content)
 }
 
 const start = () => {
